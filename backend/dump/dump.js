@@ -66,26 +66,15 @@
 
 import request from "supertest";
 // const request = require("supertest");
-import app from "../server.js";
+// import app from "../server.js";
 
-describe("Products API", function () {
-  it("Should fetch all the products", function (done) {
-    request(app)
-      .get("/api/products")
-      .expect("content-type", /json/)
-      .expect(200, done);
-
+describe("Authentication Posts", function () {
+  it("Should fetch authenticated user on providing auth token", function (done) {
     done();
   });
 
-  // it("Should return invalid token", function (done) {
-  //   request(app)
-  //     .get("/api/auth")
-  //     .set(
-  //       "Authorization",
-  //       "eyJbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFkYWY3ODJjNjg2YmYzNGE4YWNlNTJlIn0sImlhdCI6MTY1MDg3ODQ3NCwiZXhwIjoxNjUwODgyMDc0fQ.jxdajBgZlRGiIEoG7D1hbmTtmwLFkoCsP4hp4gko3eY"
-  //     )
-  //     .expect("content-type", /json/)
-  //     .expect(401, done);
-  // });
+  it("Should return invalid token", function (done) {
+   done();
 });
+
+
