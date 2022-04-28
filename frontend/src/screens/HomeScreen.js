@@ -1,4 +1,4 @@
-//Frontend component - HomeScreen.js
+  //Frontend component - HomeScreen.js
 
 //This file is responsible for ensuring that all items (such as product name, image, ratings, top product carousel) on the home screen as well as features like product pagination are displayed & implemented correctly.
 
@@ -25,11 +25,14 @@ const HomeScreen = ({ match }) => {
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productList)
+  console.log(productList);
   const { loading, error, products, page, pages } = productList
 //We are using Hooks to pass data and change the sate
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber))
   }, [dispatch, keyword, pageNumber])
+
+  // console.log(products)
 
   //This section iterates through all the products and displays them. The product details are imported and displayed as rows and columns using cards & maps.
   return (

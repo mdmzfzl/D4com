@@ -1,10 +1,6 @@
 // let chai = require('chai');
 import chai from 'chai';
-
-
-
 import chaiHttp from 'chai-http';
-// let server = require('../backend/server.js');
 import server from '../server.js';
 
 

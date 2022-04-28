@@ -24,10 +24,10 @@ const getProducts = asyncHandler(async (req, res) => {
 
   const data = await redisClient.get(`products?${pageSize}`);
   if (data) {
-    console.log("Redis Cache Hit");
-    res.json({products:JSON.parse(data)});
+    console.log("Redis Cache Hit -1");
+    res.json({ products: JSON.parse(data) });
   } else {
-    console.log("Redis Cache Miss");
+    console.log("Redis Cache Miss -1");
     const keyword = req.query.keyword
       ? {
           name: {
@@ -41,7 +41,7 @@ const getProducts = asyncHandler(async (req, res) => {
     const products = await Product.find({ ...keyword })
       .limit(pageSize)
       .skip(pageSize * (page - 1));
-      //Setting the cache data for the key products?pageSize
+    //Setting the cache data for the key products?pageSize
     await redisClient.setEx(
       `products?${pageSize}`,
       3600,
@@ -55,14 +55,46 @@ const getProducts = asyncHandler(async (req, res) => {
 // @route   GET /api/products/:id
 // @access  Public
 const getProductById = asyncHandler(async (req, res) => {
-  const product = await Product.findById(req.params.id);
+  // const product = await Product.findById(req.params.id);
+  let PRODUCT;
+  const data = await redisClient.get(`products_id:` + req.params.id);
 
-  if (product) {
-    res.json(product);
+  if (!data) {
+    // When cache is empty
+    // res.json(JSON.parse(data));
+    console.log("Redis Cache Miss -2");
+    const product = await Product.findById(req.params.id);
+    PRODUCT = product;
+
+    await redisClient.setEx(
+      `products_id:` + req.params.id,
+      3600,
+      JSON.stringify(product)
+    );
+  } else {
+    console.log("Redis Cache Hit -2");
+    PRODUCT = data;
+    return res.json(JSON.parse(PRODUCT));
+  }
+
+  console.log(PRODUCT);
+
+  if (PRODUCT) {
+    // res.json(product);
+    res.json(JSON.parse(JSON.stringify(PRODUCT)));
   } else {
     res.status(404);
     throw new Error("Product not found");
   }
+
+  // const product = await Product.findById(req.params.id)
+
+  // if (product) {
+  //   res.json(product)
+  // } else {
+  //   res.status(404)
+  //   throw new Error('Product not found')
+  // }
 });
 
 // @desc    Delete a product
