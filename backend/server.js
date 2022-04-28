@@ -5,12 +5,15 @@ import colors from "colors";
 import morgan from "morgan";
 import YAML from "yamljs";
 import swaggerUi from "swagger-ui-express";
+import fsr from "file-stream-rotator";
 
+// const fsr = require("file-stream-rotator");
 //const swaggerUi = require("swagger-ui-express");
-
+// var morgan = require('morgan')
+// const fsr = require('file-stream-rotator');
 //const YAML = require("yamljs");
 
-const swaggerDocument = YAML.load("backend/swagger.yaml");
+const swaggerDocument = YAML.load("./backend/swagger.yaml");
 
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
@@ -26,15 +29,21 @@ connectDB();
 
 const app = express();
 
+
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+morgan(':method :url :status :res[content-length] - :response-time ms')
+
+
+let logsinfo = fsr.getStream({filename:"logs/server.log", frequency:'60m', verbose: true});
+app.use(morgan('dev', {stream: logsinfo}))
+
+
 app.use(
   "/api-docs",
-
   swaggerUi.serve,
-
   swaggerUi.setup(swaggerDocument)
 );
 
@@ -84,4 +93,6 @@ app.listen(
   )
 );
 
-// Axios HTTP request from the backend
+// Axios HTTP request from the backend to the frontend
+
+export default app;
