@@ -519,6 +519,17 @@ components:
 
           description: The email of the user.
       example:
+        user: 61dc29ac27ee3d3f1406bdbe
+        orderItems: Ballesh
+        shippingAddress: kwjsfd KD o
+        paymentMethod: PayPal
+        paymentResult: 98199391SB772880F
+        taxPrice: 69
+        shippingPrice:  1000
+        totalPrice: 7000
+        isPaid: true
+        isDelivered: true
+
     Products : 
       type : object 
       required : 
