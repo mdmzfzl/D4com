@@ -1,4 +1,4 @@
-# ProShop eCommerce Platform
+
 > eCommerce DFour-C platform built with the MERN stack & Redux.
 ## Features
 
