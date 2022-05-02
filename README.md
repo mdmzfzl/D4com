@@ -81,6 +81,20 @@ jane@example.com (Customer)
 ```
 
 
+
+To run it with Docker 
+docker compose up --build
+
+
+
+
+
+Running Application -> https://d4commerce.herokuapp.com/
+
+Kindly use the Above mentioned Credentials to Login and Check it 
+
+
+
 ## License
 
 The MIT License
