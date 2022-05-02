@@ -1,5 +1,4 @@
-
-> eCommerce DFour-C platform built with the MERN stack & Redux.
+# eCommerce DFour-C platform built with the MERN stack & Redux.
 ## Features
 
 - Full featured shopping cart
@@ -81,6 +80,13 @@ jane@example.com (Customer)
 ```
 
 
+## To build react app
+
+For production release (client side app):
+
+```sh
+npm run build
+```
 
 To run it with Docker 
 ```
