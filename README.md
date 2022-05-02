@@ -100,22 +100,23 @@ https://d4commerce.herokuapp.com/
 DFour-Commerce is currently extended with the following packages:
 
 ### Client-side npm packages
-- axios
-- react-router-dom
-- dotenv
-- mapbox-gl
-- react
-- react-dom
-- react-elastic carousel
-- react-loading-spin
-- react-paginate
-- react-pro-sidebar
-- react-router-dom
-- react-scripts
-- styled-components
-- sweetalert2
-- sweetalert2-react-content
-- web-vitals
+   - axios
+  -mongodb
+   -react
+    -react-bootstrap
+    -react-dom
+    -react-helmet
+    -react-magnifier
+    -react-paypal-button-v2
+    -react-redux": "^7.2.1",
+    -react-router-bootstrap
+    -react-router-dom
+    -react-scripts
+    -recharts
+    -redux
+    -redux-devtools-extension
+    -redux-thunk
+    -url
 
 ### Server-side npm packages
 - body-parser
