@@ -101,6 +101,13 @@ Running Application -> https://d4commerce.herokuapp.com/
 Kindly use the Above mentioned Credentials to Login and Check it 
 
 
+# Contributors 
+Logu R  (S20190010111)
+Romy Savin Peter ( S20190010153)
+Muzakkir Fazal ( S20190010121)
+Krushang Srikonda ( S20190010164)
+Abdul Rahman (S20190010002)
+
 
 ## License
 
