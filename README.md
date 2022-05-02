@@ -83,8 +83,9 @@ jane@example.com (Customer)
 
 
 To run it with Docker 
+```
 docker compose up --build
-
+```
 
 
 
