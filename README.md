@@ -1,5 +1,6 @@
-# ProShop eCommerce Platform
-> eCommerce DFour-C platform built with the MERN stack & Redux.
+# D4C eCommerce Platform
+A robust and scalable e-commerce website made using the MERN(MongoDB, Express, React, and Node.js) stack, along with Redux for efficient state management. The website provides a seamless shopping experience for users, with features like a fully functional shopping cart, product reviews and ratings, and an intuitive product search capability. User profiles enable customers to track their orders, while the admin panel empowers administrators to manage products, users, and orders effectively. The integration of PayPal and credit card payment methods ensures secure and convenient transactions. Overall, the project delivers a high-quality and user-friendly e-commerce solution that caters to both customers and administrators.
+
 ## Features
 
 - Full featured shopping cart
@@ -17,13 +18,16 @@
 - PayPal / credit card integration
 - Database seeder (products & users)
 
+## Installation Guide
+
+
 ### Env Variables
- .env file in then root and add the following
+ Open .env file in the root directory and add the following
 
 ```
 NODE_ENV = development
 PORT = 5000
-MONGO_URI = your mongodb uri of the Mongodb atlas (mongodb+srv://fosablanca:group33%40d4c@cluster0.9pxa8.mongodb.net/d4comm?retryWrites=true&w=majority) for this project
+MONGO_URI = your mongodb url of the Mongodb atlas (mongodb+srv://fosablanca:group33%40d4c@cluster0.9pxa8.mongodb.net/d4comm?retryWrites=true&w=majority) for this project
 JWT_SECRET = 'abc123'
 PAYPAL_CLIENT_ID = your paypal client id (AUqUkKRYn6jSo9rbRdtWmSIwGOEtM0UKdUzlD01oBXwWkmpY5NYIlj9VbbvLisbCXbqCqvL_29Ila5vV) for this project 
 ```
@@ -31,10 +35,9 @@ PAYPAL_CLIENT_ID = your paypal client id (AUqUkKRYn6jSo9rbRdtWmSIwGOEtM0UKdUzlD0
 ### Install Dependencies (frontend & backend)
 
 ```
-
->npm install
->cd frontend
-\frontend>npm install
+> npm install
+> cd frontend
+\frontend> npm install
 ```
 
 ### Run
@@ -67,9 +70,8 @@ npm run data:import
 npm run data:destroy
 ```
 
-```
 Sample User Logins
-
+```
 admin@example.com (Admin)
 123456
 
@@ -79,28 +81,3 @@ john@example.com (Customer)
 jane@example.com (Customer)
 123456
 ```
-
-
-## License
-
-The MIT License
-
-Copyright (c) 2021 d4c Communications Inc .
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
